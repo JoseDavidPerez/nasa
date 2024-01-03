@@ -22,6 +22,7 @@
 		B9AF98902B3B7325004D89A4 /* PhotosFavoriteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AF988F2B3B7325004D89A4 /* PhotosFavoriteUITests.swift */; };
 		B9AF98922B3B7325004D89A4 /* PhotosFavoriteUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AF98912B3B7325004D89A4 /* PhotosFavoriteUITestsLaunchTests.swift */; };
 		B9AF98A32B3B73FD004D89A4 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AF98A22B3B73FD004D89A4 /* APIManager.swift */; };
+		B9D73E472B4614EC00751C36 /* ExtensionUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D73E462B4614EC00751C36 /* ExtensionUIImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		B9AF988F2B3B7325004D89A4 /* PhotosFavoriteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosFavoriteUITests.swift; sourceTree = "<group>"; };
 		B9AF98912B3B7325004D89A4 /* PhotosFavoriteUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosFavoriteUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B9AF98A22B3B73FD004D89A4 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		B9D73E462B4614EC00751C36 /* ExtensionUIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,9 @@
 		B969620B2B3D240800559F48 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B9AF98722B3B7324004D89A4 /* ViewController.swift */,
+				B96962092B3D239300559F48 /* PhotoViewController.swift */,
+				B9A393892B3BA69300A74A94 /* ListPhotoViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -126,13 +131,13 @@
 		B9AF986D2B3B7324004D89A4 /* PhotosFavorite */ = {
 			isa = PBXGroup;
 			children = (
+				B9D73E452B4614C100751C36 /* Utils */,
 				B9AF98A12B3B737E004D89A4 /* Api */,
 				B9AF98A02B3B736F004D89A4 /* Viewmodel */,
 				B9AF989F2B3B7362004D89A4 /* ViewController */,
 				B9AF989E2B3B735D004D89A4 /* Model */,
 				B9AF986E2B3B7324004D89A4 /* AppDelegate.swift */,
 				B9AF98702B3B7324004D89A4 /* SceneDelegate.swift */,
-				B9AF98722B3B7324004D89A4 /* ViewController.swift */,
 				B9AF98742B3B7324004D89A4 /* Main.storyboard */,
 				B9AF98772B3B7325004D89A4 /* Assets.xcassets */,
 				B9AF98792B3B7325004D89A4 /* LaunchScreen.storyboard */,
@@ -171,8 +176,6 @@
 			children = (
 				B969620B2B3D240800559F48 /* View */,
 				B9A393862B3B7EE600A74A94 /* Cell */,
-				B9A393892B3BA69300A74A94 /* ListPhotoViewController.swift */,
-				B96962092B3D239300559F48 /* PhotoViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -191,6 +194,14 @@
 				B9AF98A22B3B73FD004D89A4 /* APIManager.swift */,
 			);
 			path = Api;
+			sourceTree = "<group>";
+		};
+		B9D73E452B4614C100751C36 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B9D73E462B4614EC00751C36 /* ExtensionUIImageView.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,6 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9D73E472B4614EC00751C36 /* ExtensionUIImageView.swift in Sources */,
 				B9AF98A32B3B73FD004D89A4 /* APIManager.swift in Sources */,
 				B9AF98732B3B7324004D89A4 /* ViewController.swift in Sources */,
 				B9AF986F2B3B7324004D89A4 /* AppDelegate.swift in Sources */,

@@ -7,13 +7,15 @@
 
 import Foundation
 import UIKit
+
 protocol PhotoViewControllerDelegate  : AnyObject {
     func didPressAddFavorite()
 }
+
 class PhotoViewController : UIViewController {
     
-    
     weak var delegate: PhotoViewControllerDelegate?
+    
     let photoImageView : UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -50,36 +52,17 @@ class PhotoViewController : UIViewController {
             favoriteButton.topAnchor.constraint(equalTo: photoImageView.bottomAnchor, constant: 20),
             favoriteButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             favoriteButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            favoriteButton.heightAnchor.constraint(equalToConstant: 35)
+            favoriteButton.heightAnchor.constraint(equalToConstant: 35),
+            favoriteButton.widthAnchor.constraint(equalToConstant: 50)
             
         ])
     }
     
     @objc func handleAddFavorite(){
-        print("Hola")
         delegate?.didPressAddFavorite()
     }
     
     func loadImageFromUrl(url: URL){
         photoImageView.loadFrom(URLAddres: url.absoluteString)
-    }
-}
-
-extension UIImageView {
-    func loadFrom(URLAddres: String) {
-        guard let url = URL(string: URLAddres) else { return }
-
-        URLSession.shared.dataTask(with: url) { [weak self] (data, _, error) in
-            guard let data = data, error == nil else {
-                print("Error loading image from URL: \(error?.localizedDescription ?? "")")
-                return
-            }
-
-            if let loadedImage = UIImage(data: data) {
-                DispatchQueue.main.async {
-                    self?.image = loadedImage
-                }
-            }
-        }.resume()
     }
 }
