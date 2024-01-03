@@ -9,36 +9,49 @@ import Foundation
 import UIKit
 
 class ListPhotoViewController : UIViewController {
-    var ListPhoto: [Photo]? = []
-    let apiManager = ApiManager()
+    var selectedCell: IndexPath?
+    var listPhoto: [Photo]? = []
+    var servicePhoto : ServicePhoto?
+    var viewModel : PhotoViewModel!
     let listTable : UITableView = {
       let table = UITableView()
         table.translatesAutoresizingMaskIntoConstraints = false
         return table
     }()
     
+    convenience init(servicePhoto: ServicePhoto ) {
+        self.init()
+        self.servicePhoto = servicePhoto
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        viewModel = PhotoViewModel(servicePhoto: servicePhoto)
         listTable.dataSource = self
         listTable.delegate = self
         listTable.register(PhotoCellView.self, forCellReuseIdentifier: "cellList")
-        getPhoto()
+        getPhotoReload()
     }
-    func getPhoto(){
-        apiManager.getPhotos { [weak self]  result in
-            switch result{
-            case .success(let photo):
-                DispatchQueue.main.async {
-                    self?.ListPhoto = photo
-                    self?.listTable.reloadData()
+    
+    func getPhotoReload() {
+        
+        DispatchQueue.main.async {
+            self.viewModel.getPhoto { [weak self]  result in
+                switch result{
+                case .success(let photo):
+                    DispatchQueue.main.async {
+                        self?.listPhoto = photo
+                        self?.listTable.reloadData()
+                    }
+                case .failure(let error):
+                    print("Error fetching photos:\(error)")
                 }
-            case .failure(let error):
-                print("Error fetching photos: \(error)")
             }
         }
+
     }
-    func setupUI(){
+    
+    func setupUI() {
         view.addSubview(listTable)
         listTable.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         listTable.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
@@ -49,16 +62,17 @@ class ListPhotoViewController : UIViewController {
 
 extension ListPhotoViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ListPhoto?.count ?? 0
+        return listPhoto?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cellList", for: indexPath) as? PhotoCellView,
-            let photo = ListPhoto?[indexPath.row] else {
-                return UITableViewCell()
+              let photo = listPhoto?[indexPath.row] else {
+            return UITableViewCell()
         }
-
-        cell.namePhotoLAbel.text  = "ID \(photo.id), Sol: \(photo.sol)"
+        
+        cell.namePhotoLAbel.text  = photo.camera.fullName.rawValue
+        cell.favoriteImageView.image = photo.isFavorite ? UIImage(named: "heart_fill") : UIImage(named: "me-gusta")
         return cell
     }
     
@@ -67,7 +81,31 @@ extension ListPhotoViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-print("hola")
+        selectedCell = indexPath
+        let view = PhotoViewController()
+        if let imageURLString = listPhoto?[indexPath.row].imgSrc,
+            let imageURL = URL(string: imageURLString) {
+            view.loadImageFromUrl(url: imageURL)
+        }
+        view.delegate = self
+        navigationController?.pushViewController(view, animated: true)
+        DispatchQueue.main.async {
+            self.listTable.reloadRows(at: [indexPath], with: .none)
+        }
     }
     
+}
+
+extension ListPhotoViewController: PhotoViewControllerDelegate {
+    func didPressAddFavorite() {
+        guard let selectedIndexPath = selectedCell,
+              var photo = listPhoto?[selectedIndexPath.row] else {
+            return
+        }
+        photo.isFavorite = true
+        listPhoto?[selectedIndexPath.row] = photo
+        DispatchQueue.main.async {
+            self.listTable.reloadRows(at: [selectedIndexPath], with: .none)
+        }
+    }
 }

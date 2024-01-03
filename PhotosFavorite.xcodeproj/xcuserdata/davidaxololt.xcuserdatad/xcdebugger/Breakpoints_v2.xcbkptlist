@@ -7,22 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "63D303FF-3761-4AD7-A97B-DE3EB55B227A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PhotosFavorite/Api/APIManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "getPhotos(completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "4B82577F-0AAB-44A7-8F37-3704A60BFAFA"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -30,28 +14,13 @@
             filePath = "PhotosFavorite/ViewController/ListPhotoViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "getPhoto()"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "getPhotoReload()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "4B82577F-0AAB-44A7-8F37-3704A60BFAFA - cd9139d24e7e0659"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PhotosFavorite.ListPhotoViewController.getPhoto() -&gt; ()"
-                  moduleName = "PhotosFavorite"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidaxololt/Documents/Clases%20Bodgar/PhotosFavorite/PhotosFavorite/ViewController/ListPhotoViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "36">
-               </Location>
-               <Location
-                  uuid = "4B82577F-0AAB-44A7-8F37-3704A60BFAFA - 1f927badd5b45576"
+                  uuid = "4B82577F-0AAB-44A7-8F37-3704A60BFAFA - 1f927badd5b457af"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -61,12 +30,12 @@
                   urlString = "file:///Users/davidaxololt/Documents/Clases%20Bodgar/PhotosFavorite/PhotosFavorite/ViewController/ListPhotoViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "216">
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "288">
                </Location>
                <Location
-                  uuid = "4B82577F-0AAB-44A7-8F37-3704A60BFAFA - 28d241a173346e14"
+                  uuid = "4B82577F-0AAB-44A7-8F37-3704A60BFAFA - 28d241a173346d6e"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -76,12 +45,12 @@
                   urlString = "file:///Users/davidaxololt/Documents/Clases%20Bodgar/PhotosFavorite/PhotosFavorite/ViewController/ListPhotoViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
                   offsetFromSymbolStart = "28">
                </Location>
                <Location
-                  uuid = "4B82577F-0AAB-44A7-8F37-3704A60BFAFA - cd9139d24e7e0678"
+                  uuid = "4B82577F-0AAB-44A7-8F37-3704A60BFAFA - cd9139d24e7e0480"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -91,12 +60,12 @@
                   urlString = "file:///Users/davidaxololt/Documents/Clases%20Bodgar/PhotosFavorite/PhotosFavorite/ViewController/ListPhotoViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "36">
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "32">
                </Location>
                <Location
-                  uuid = "4B82577F-0AAB-44A7-8F37-3704A60BFAFA - 1f927badd5b45557"
+                  uuid = "4B82577F-0AAB-44A7-8F37-3704A60BFAFA - 1f927badd5b457af"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -106,12 +75,12 @@
                   urlString = "file:///Users/davidaxololt/Documents/Clases%20Bodgar/PhotosFavorite/PhotosFavorite/ViewController/ListPhotoViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "216">
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "212">
                </Location>
                <Location
-                  uuid = "4B82577F-0AAB-44A7-8F37-3704A60BFAFA - 28d241a173346e35"
+                  uuid = "4B82577F-0AAB-44A7-8F37-3704A60BFAFA - 28d241a173346ccd"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -121,9 +90,9 @@
                   urlString = "file:///Users/davidaxololt/Documents/Clases%20Bodgar/PhotosFavorite/PhotosFavorite/ViewController/ListPhotoViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "28">
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "16">
                </Location>
             </Locations>
          </BreakpointContent>

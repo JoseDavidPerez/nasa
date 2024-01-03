@@ -6,12 +6,16 @@
 //
 
 import Foundation
-
+///
 protocol ServicePhoto {
+    ///- Inyecciones 
+    ///- Returns:
+    ///- `[Photo]` : Array of
     func getPhotos(completion: @escaping(Result<[Photo],Error>)-> Void)
 }
 
 class ApiManager : ServicePhoto {
+    
     func getPhotos(completion: @escaping (Result<[Photo], Error>) -> Void) {
         let url = URL(string: "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?api_key=ebIStTbKmXzyVhtxkCOpqLeNX616o5Ry9lcthjQx&sol=2000&page=1")!
         
@@ -35,5 +39,12 @@ class ApiManager : ServicePhoto {
             }
         }
         task.resume()
+    }
+}
+
+class CoreDataManager : ServicePhoto{
+    func getPhotos(completion: @escaping (Result<[Photo], Error>) -> Void) {
+        var photos = Photo(id: 1, sol: 2, camera: PhotoCamera(id: 1, name: .chemcam, roverID: 1, fullName: .chemistryAndCameraComplex), imgSrc: "", earthDate: "", rover: .init(id: 1, name: .curiosity, landingDate: "", launchDate: "", status: .active, maxSol: 1, maxDate: "", totalPhotos: 1, cameras: []))
+        completion(.success([photos]))
     }
 }

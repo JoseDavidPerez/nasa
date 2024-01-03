@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B969620A2B3D239300559F48 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96962092B3D239300559F48 /* PhotoViewController.swift */; };
-		B969620D2B3D241900559F48 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B969620C2B3D241900559F48 /* PhotoView.swift */; };
+		B9A33B392B44E60700EBA1A9 /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A33B382B44E60700EBA1A9 /* PhotoViewModel.swift */; };
 		B9A393832B3B783000A74A94 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A393822B3B783000A74A94 /* Photos.swift */; };
 		B9A393882B3B7EF200A74A94 /* PhotoCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A393872B3B7EF200A74A94 /* PhotoCellView.swift */; };
 		B9A3938A2B3BA69300A74A94 /* ListPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A393892B3BA69300A74A94 /* ListPhotoViewController.swift */; };
@@ -43,7 +43,7 @@
 
 /* Begin PBXFileReference section */
 		B96962092B3D239300559F48 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
-		B969620C2B3D241900559F48 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
+		B9A33B382B44E60700EBA1A9 /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
 		B9A393822B3B783000A74A94 /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		B9A393872B3B7EF200A74A94 /* PhotoCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellView.swift; sourceTree = "<group>"; };
 		B9A393892B3BA69300A74A94 /* ListPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPhotoViewController.swift; sourceTree = "<group>"; };
@@ -91,7 +91,6 @@
 		B969620B2B3D240800559F48 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B969620C2B3D241900559F48 /* PhotoView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -181,6 +180,7 @@
 		B9AF98A02B3B736F004D89A4 /* Viewmodel */ = {
 			isa = PBXGroup;
 			children = (
+				B9A33B382B44E60700EBA1A9 /* PhotoViewModel.swift */,
 			);
 			path = Viewmodel;
 			sourceTree = "<group>";
@@ -327,8 +327,8 @@
 				B9AF98A32B3B73FD004D89A4 /* APIManager.swift in Sources */,
 				B9AF98732B3B7324004D89A4 /* ViewController.swift in Sources */,
 				B9AF986F2B3B7324004D89A4 /* AppDelegate.swift in Sources */,
-				B969620D2B3D241900559F48 /* PhotoView.swift in Sources */,
 				B9A393832B3B783000A74A94 /* Photos.swift in Sources */,
+				B9A33B392B44E60700EBA1A9 /* PhotoViewModel.swift in Sources */,
 				B9A3938A2B3BA69300A74A94 /* ListPhotoViewController.swift in Sources */,
 				B969620A2B3D239300559F48 /* PhotoViewController.swift in Sources */,
 				B9AF98712B3B7324004D89A4 /* SceneDelegate.swift in Sources */,
