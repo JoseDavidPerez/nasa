@@ -8,8 +8,13 @@
 import Foundation
 
 class PhotoViewModel {
+    var refreshData = { () -> () in }
     
-    var listPhoto: [Photo] = []
+    var listPhoto: [Photo] = [] {
+        didSet {
+            refreshData()
+        }
+    }
     private let servicePhoto: ServicePhoto?
     
     init(servicePhoto: ServicePhoto?) {

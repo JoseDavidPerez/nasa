@@ -12,7 +12,7 @@ class ListPhotoViewController : UIViewController {
     var selectedCell: IndexPath?
     var listPhoto: [Photo]? = []
     var servicePhoto : ServicePhoto?
-    var viewModel : PhotoViewModel!
+    var viewModel = PhotoViewModel(servicePhoto: ApiManager())
     let listTable : UITableView = {
       let table = UITableView()
         table.translatesAutoresizingMaskIntoConstraints = false
@@ -23,13 +23,17 @@ class ListPhotoViewController : UIViewController {
         self.init()
         self.servicePhoto = servicePhoto
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        viewModel = PhotoViewModel(servicePhoto: servicePhoto)
         listTable.dataSource = self
         listTable.delegate = self
         listTable.register(PhotoCellView.self, forCellReuseIdentifier: "cellList")
+        viewModel.refreshData = {[weak self] in
+            self?.listPhoto = self?.viewModel.listPhoto
+            self?.listTable.reloadData()
+        }
         getPhotoReload()
     }
     
@@ -38,11 +42,8 @@ class ListPhotoViewController : UIViewController {
         DispatchQueue.main.async {
             self.viewModel.getPhoto { [weak self]  result in
                 switch result{
-                case .success(let photo):
-                    DispatchQueue.main.async {
-                        self?.listPhoto = photo
-                        self?.listTable.reloadData()
-                    }
+                case .success:
+                    break
                 case .failure(let error):
                     print("Error fetching photos:\(error)")
                 }

@@ -15,7 +15,7 @@ protocol ServicePhoto {
 }
 
 class ApiManager : ServicePhoto {
-    
+    /// Funcion return json
     func getPhotos(completion: @escaping (Result<[Photo], Error>) -> Void) {
         let url = URL(string: "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?api_key=ebIStTbKmXzyVhtxkCOpqLeNX616o5Ry9lcthjQx&sol=2000&page=1")!
         
@@ -31,7 +31,7 @@ class ApiManager : ServicePhoto {
                 do {
                     let photos = try JSONDecoder().decode(PhotoResponse.self, from: data)
                     completion(.success(photos.photos))
-                    print(photos.photos)
+                    //print(photos.photos)
                 } catch {
                     print(error)
                     completion(.failure(error))
